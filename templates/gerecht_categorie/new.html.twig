@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GerechtCategorie{% endblock %}
+
+{% block body %}
+    <h1>Create new GerechtCategorie</h1>
+
+    {{ include('gerecht_categorie/_form.html.twig') }}
+
+    <a href="{{ path('gerecht_categorie_index') }}">back to list</a>
+{% endblock %}

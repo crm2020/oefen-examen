@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit GerechtSoorten{% endblock %}
+
+{% block body %}
+    <h1>Edit GerechtSoorten</h1>
+
+    {{ include('gerecht_soorten/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('gerecht_soorten_index') }}">back to list</a>
+
+    {{ include('gerecht_soorten/_delete_form.html.twig') }}
+{% endblock %}

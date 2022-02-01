@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Klanten index{% endblock %}
+
+{% block body %}
+    <h1>Klanten index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Telefoon</th>
+                <th>Email</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for klanten in klantens %}
+            <tr>
+                <td>{{ klanten.id }}</td>
+                <td>{{ klanten.Naam }}</td>
+                <td>{{ klanten.Telefoon }}</td>
+                <td>{{ klanten.Email }}</td>
+                <td>
+                    <a href="{{ path('klanten_show', {'id': klanten.id}) }}">show</a>
+                    <a href="{{ path('klanten_edit', {'id': klanten.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('klanten_new') }}">Create new</a>
+{% endblock %}

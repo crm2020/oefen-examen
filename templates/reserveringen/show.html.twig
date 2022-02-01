@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reserveringen{% endblock %}
+
+{% block body %}
+    <h1>Reserveringen</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reserveringen.id }}</td>
+            </tr>
+            <tr>
+                <th>Tafel</th>
+                <td>{{ reserveringen.Tafel }}</td>
+            </tr>
+            <tr>
+                <th>Datum</th>
+                <td>{{ reserveringen.Datum ? reserveringen.Datum|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Tijd</th>
+                <td>{{ reserveringen.Tijd ? reserveringen.Tijd|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Aantal</th>
+                <td>{{ reserveringen.Aantal }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ reserveringen.Status }}</td>
+            </tr>
+            <tr>
+                <th>Allergien</th>
+                <td>{{ reserveringen.Allergien }}</td>
+            </tr>
+            <tr>
+                <th>Opmerkingen</th>
+                <td>{{ reserveringen.Opmerkingen }}</td>
+            </tr>
+            <tr>
+                <th>DatumToegevoegd</th>
+                <td>{{ reserveringen.DatumToegevoegd ? reserveringen.DatumToegevoegd|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('reserveringen_index') }}">back to list</a>
+
+    <a href="{{ path('reserveringen_edit', {'id': reserveringen.id}) }}">edit</a>
+
+    {{ include('reserveringen/_delete_form.html.twig') }}
+{% endblock %}
